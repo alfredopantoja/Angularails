@@ -1,0 +1,22 @@
+<div ng-app="AngulaRails" ng-controller="GamesController" ng-init="init()">
+  <h1>Games</h1>
+
+  <%= link_to 'New Game', new_game_path, class: "btn btn-default" %>
+
+  <br />
+
+  <div ar-paging="paging" ar-current-page="currentPage" ar-paging-change="getGames"></div>
+  
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="game in games">
+        <td>{{ game.name }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
